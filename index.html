@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Library</title>
+  </head>
+  <body>
+    <h1>Library</h1>
+    <h2>Add new book</h2>
+    <form id="add-book-form">
+      <label for="input-title">
+        Title
+        <input type="text" id="input-title" />
+      </label>
+
+      <label for="input-author">
+        Author
+        <input type="text" id="input-author" />
+      </label>
+
+      <label for="input-pages">
+        Pages
+        <input type="number" id="input-pages" />
+      </label>
+
+      <label for="input-is-read">
+        Have you read the book?
+        <input id="input-is-read" type="checkbox" />
+      </label>
+      <button id="btn-add-book">Add Book</button>
+    </form>
+    <h2>Bookshelf</h2>
+    <div id="library-container"></div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
