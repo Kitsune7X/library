@@ -15,6 +15,8 @@ function Book(title, author, pages, isRead) {
     (this.id = self.crypto.randomUUID());
 }
 
+// Book.prototype.changeReadStatus = () => (isRead = !isRead);
+
 const book1 = new Book("Jojo's Bizarre Adventure", 'Hirohiko Araki', 280, true);
 const book2 = new Book('Dragon Ball', 'Akira Toriyama', 500, false);
 const book3 = new Book('Jujutsu Kaisen', 'Gege Akutami', 400, true);
@@ -74,7 +76,17 @@ const displayLibrary = (library) => {
       displayLibrary(library);
     });
 
-    li.append(title, author, pages, read, deleteBtn);
+    // Change Read Status button
+    const statBtn = create('button');
+    statBtn.textContent = item.isRead ? 'Mark Unread' : 'Mark Read';
+
+    statBtn.addEventListener('click', () => {
+      console.log('Shit!');
+      item.isRead = !item.isRead;
+      displayLibrary(library);
+    });
+
+    li.append(title, author, pages, read, deleteBtn, statBtn);
 
     ul.appendChild(li);
 
